@@ -6,8 +6,8 @@ ORG_FS_DIR=/projects/pnl/3Tdata/freesurfer-pipeline
 ORG_PPL_DIR=/projects/schiz/3Tprojects/2014-delre-masking/pipelines
 
 # freesurfer-pipeline（newly copy from ${ORG_FS_DIR} to ${NEW_PPL_DIR}/freesurfer-pipeline）
-# - realign-edrmasks-pipeline (newly copy to ${NEW_PPL_DIR}/realign-dermasks-pieline)
-# - - realign-pipeline (newly copy to ${NEW_PPL_DIR}/realign-pieline)
+# - realign-edrmasks-pipeline (newly copy to ${NEW_PPL_DIR}/realign-edrmasks-pipeline)
+# - - realign-pipeline (newly copy to ${NEW_PPL_DIR}/realign-pipeline)
 #
 # This script is located in ${NEW_DIR} 
 #
