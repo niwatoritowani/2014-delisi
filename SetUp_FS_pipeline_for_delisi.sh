@@ -41,7 +41,7 @@ cp ${ORG_PPL_DIR}/realign-edrmasks-pipeline/default.mask-realign.nrrd.do .
 cp ${ORG_PPL_DIR}/realign-edrmasks-pipeline/default.t1-realign-masked.nrrd.do .
 mkdir scripts
 mkdir config
-cp -r ${ORG_PPL_DIR}/realign-edrmasks-pipeline/scripts/applyxfm.sh scripts/spplyxfm.sh
+cp -r ${ORG_PPL_DIR}/realign-edrmasks-pipeline/scripts/applyxfm.sh scripts/applyxfm.sh
 #[config/XFM]
 echo -n ${NEW_PPL_DIR}/realign-pipeline/\$case.xfm > config/XFM
 #[config/STRUCTURAL]
