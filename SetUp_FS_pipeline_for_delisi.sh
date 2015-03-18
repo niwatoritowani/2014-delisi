@@ -31,8 +31,8 @@ cp ${ORG_FS_DIR}/scripts/mask.sh scripts/mask.sh
 echo -n /projects/schiz/ra/eli/freesurfer5.3 > config/FREESURFER_HOME
 #[config/T1S_FILEPATTERN]
 echo -n ${NEW_DIR}/pipelines/realign-edrmasks-pipeline/\$case.t1-realign-masked.nrrd
-#[config/NONSKULLSTRIP] set nonskulstrip
-echo -n > config/NONSKULLSTRIP
+# #[config/NONSKULLSTRIP] set nonskulstrip
+# echo -n > config/NONSKULLSTRIP
 
 #[realign-edrmasks-pipeline]
 cd ${NEW_PPL_DIR}/realign-edrmasks-pipeline
