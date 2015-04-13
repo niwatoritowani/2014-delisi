@@ -65,7 +65,7 @@ echo -n ${NEW_PPL_DIR}/realign-pipeline/\$case.xfm > config/XFM
 #[config/STRUCTURAL]
 echo -n	${NEW_DIR}/masks-fromcluster/\$case.atlasmask.thresh50-edr.nrrd > config/STRUCTURAL
 #[config/REALIGN_T1]
-echo -n ${NEW_DIR}/dicom_to_nifti/data/\$case/align-space/\$case-T1-realign.nrrd > config/REALIGN_T1
+echo -n ${NEW_DIR}/\$case/align-space/\$case-t1w-realign.nrrd > config/REALIGN_T1
 
 #[realign-pipeline]
 cd ${NEW_PPL_DIR}/realign-pipeline
@@ -73,6 +73,6 @@ cd ${NEW_PPL_DIR}/realign-pipeline
 cp ${ORG_PPL_DIR}/realign-pipeline/default.xfm.do .
 mkdir config
 #[config/REALIGN_T1]
-echo -n ${NEW_DIR}/dicom_to_nifti/data/\$case/align-space/\$case-T1-realign.nrrd > config/REALIGN_T1
+echo -n ${NEW_DIR}/\$case/align-space/\$case-t1w-realign.nrrd > config/REALIGN_T1
 #[config/T2]
 echo -n ${NEW_DIR}/dicom_to_nifti/data/\$case/T2/\$case-T2.nrrd > config/T2
