@@ -1,0 +1,89 @@
+# workflow
+
+[participants] genetically high risk group. 77cases? 2015/03/10.
+
+- DICOM (t1w and t2w) -> nrrd,
+- t2w nrrd -> Multi-atlas-based masking (t2w)
+- Multi-atlas-based masking (t2w) -> edit mask manually
+- t1w nrrd -> aligned t1w
+- aligned t1w and t2w mask -> FreeSurfer in masked aligned t1w
+- 
+
+# data description
+
+- Project directory
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi
+- caselist
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/caselist_jun.txt 
+- DICOM 
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/<case_ID>/dicom/
+- NRRD
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/dicom_to_nifti/data/<case_ID>/T1/<case_ID>-T1.nrrd
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/dicom_to_nifti/data/<case_ID>/T2/<case_ID>-T2.nrrd
+- NRRD (Which are someone had created and their axis is aligned to voxel space)
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/<case_ID>/<case_ID>-t1w.nhdr
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/<case_ID>/<case_ID>-t2w.nhdr
+
+- atlasmask directory : 
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/masks-fromcluster/
+- atlasmask : 
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/masks-fromcluster/<case_ID>.atlasmask.thresh50.nrrd
+- edited atlasmask :
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/masks-fromcluster/<case_ID>.atlasmask.thresh50-edr.nrrd
+- aligned T1 :
+    - some realigned t1w images have been created by someone in some cases 
+    - from /rfanfs/pnl-a/pnl/Collaborators/Delisi/<case_ID>/<case_ID>-t1w.nhdr
+    - to /rfanfs/pnl-a/pnl/Collaborators/Delisi/<case_ID>/align-space/<case_ID>-t1w-realign.nrrd
+
+- freesurfer-pipeline directory
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/freesurfer-pipeline/
+- created files by fressurfer-pipelne
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/realign-pipeline/<case_ID>.xfm 
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/realign-pipeline/<case_ID>-t2w-realign.nrrd 
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/realign-edrmasks-pipeline/<case_ID>.t1-realign-masked.nrrd
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/realign-edrmasks-pipeline/<case_ID>.mask-realign 
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/freesurfer-pipeline/<case_ID>.freesurfer
+
+
+# step by step
+
+- Project directory and caselist
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/caselist_jun.txt 
+## We created nrrd files from DICOM in (use ConvertBetweenFileFormats)
+    - input DICOM directory
+        - /rfanfs/pnl-a/pnl/Collaborators/Delisi/<case_ID>/dicom/
+    - output files
+        - to /rfanfs/pnl-a/pnl/Collaborators/Delisi/dicom_to_nifti/data/<case_ID>/T1/<case_ID>-T1.nrrd
+        - to T2/<case_ID>-T2.nrrd
+### Or someone had created nhdr files as 
+    - They are different in physical axis paralleled to voxel space but the data itself are the same as ours.  
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/<case_ID>/<case_ID>-t1w.nhdr and ...<case_ID>-t2w.nhdr
+
+## We can create Multi Atlas Based Masks by "redo <case_ID>" in 
+    - directory : 
+        - /rfanfs/pnl-a/pnl/Collaborators/Delisi/masks-fromcluster/
+    - output file
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/masks-fromcluster/<case_ID>.atlasmask.thresh50.nrrd
+
+## Then we edit the mask manually to create 
+    - output file
+        - /rfanfs/pnl-a/pnl/Collaborators/Delisi/masks-fromcluster/<case_ID>.atlasmask.thresh50-edr.nrrd
+
+## And we align t1w images from (some realigned t1w images have been created by someone in some cases )
+- input file
+   -  /rfanfs/pnl-a/pnl/Collaborators/Delisi/<case_ID>-t1w.nhdr 
+- output file :  
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/<case_ID>/align-space/<case_ID>-t1w-realign.nrrd
+
+## Next we execute freesurfer-pipeline by "redo <case_ID>" in 
+    - directory : 
+        - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/freesurfer-pipeline/
+    - output files : 
+        - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/realign-pipeline/<case_ID>.xfm 
+        - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/realign-pipeline/<case_ID>-t2w-realign.nrrd 
+        - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/realign-edrmasks-pipeline/<case_ID>.t1-realign-masked.nrrd
+        - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/realign-edrmasks-pipeline/<case_ID>.mask-realign 
+        - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/freesurfer-pipeline/<case_ID>.freesurfer
+
+
