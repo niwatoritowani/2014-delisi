@@ -6,7 +6,7 @@
 - Multi-atlas-based masking (t2w) -> edit mask manually
 - t1w nrrd -> aligned t1w
 - aligned t1w and t2w mask -> FreeSurfer in masked aligned t1w
-- 
+
 
 
 # data description
@@ -26,7 +26,6 @@
 - NRRD (Which are someone had created and their axis is aligned to voxel space)
     - /rfanfs/pnl-a/pnl/Collaborators/Delisi/<case_ID>/<case_ID>-t1w.nhdr
     - /rfanfs/pnl-a/pnl/Collaborators/Delisi/<case_ID>/<case_ID>-t2w.nhdr
-
 - atlasmask directory : 
     - /rfanfs/pnl-a/pnl/Collaborators/Delisi/masks-fromcluster/
 - atlasmask : 
@@ -41,7 +40,6 @@
     - some realigned t1w images have been created by someone
     - from /rfanfs/pnl-a/pnl/Collaborators/Delisi/<case_ID>/<case_ID>-t1w.nhdr
     - to /rfanfs/pnl-a/pnl/Collaborators/Delisi/<case_ID>/align-space/<case_ID>-t1w-realign.nrrd
-
 - freesurfer-pipeline directory
     - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/freesurfer-pipeline/
 - created files by fressurfer-pipelne
@@ -64,6 +62,7 @@
 - output files
         - /rfanfs/pnl-a/pnl/Collaborators/Delisi/dicom_to_nifti/data/<case_ID>/T1/<case_ID>-T1.nrrd
         - /rfanfs/pnl-a/pnl/Collaborators/Delisi/dicom_to_nifti/data/<case_ID>/T2/<case_ID>-T2.nrrd
+
 ### Or someone had created nhdr files as 
     - They are different in physical axis paralleled to voxel space.  
         - /rfanfs/pnl-a/pnl/Collaborators/Delisi/<case_ID>/<case_ID>-t1w.nhdr
