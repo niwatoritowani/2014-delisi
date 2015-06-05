@@ -57,28 +57,35 @@
     - /rfanfs/pnl-a/pnl/Collaborators/Delisi/caselist_jun.txt 
 
 ## We created nrrd files from DICOM in (use ConvertBetweenFileFormats)
+
 - input DICOM directory
     - /rfanfs/pnl-a/pnl/Collaborators/Delisi/<case_ID>/dicom/
 - output files
-        - /rfanfs/pnl-a/pnl/Collaborators/Delisi/dicom_to_nifti/data/<case_ID>/T1/<case_ID>-T1.nrrd
-        - /rfanfs/pnl-a/pnl/Collaborators/Delisi/dicom_to_nifti/data/<case_ID>/T2/<case_ID>-T2.nrrd
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/dicom_to_nifti/data/<case_ID>/T1/<case_ID>-T1.nrrd
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/dicom_to_nifti/data/<case_ID>/T2/<case_ID>-T2.nrrd
 
 ### Or someone had created nhdr files as 
-    - They are different in physical axis paralleled to voxel space.  
-        - /rfanfs/pnl-a/pnl/Collaborators/Delisi/<case_ID>/<case_ID>-t1w.nhdr
-        - /rfanfs/pnl-a/pnl/Collaborators/Delisi/<case_ID>/<case_ID>-t2w.nhdr
+
+They are axis aligned to parallele to voxel space.  
+
+- files
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/<case_ID>/<case_ID>-t1w.nhdr
+    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/<case_ID>/<case_ID>-t2w.nhdr
 
 ## We can create Multi Atlas Based Masks by "redo <case_ID>" in 
+
 - directory : 
     - /rfanfs/pnl-a/pnl/Collaborators/Delisi/masks-fromcluster/
 - output file
     - /rfanfs/pnl-a/pnl/Collaborators/Delisi/masks-fromcluster/<case_ID>.atlasmask.thresh50.nrrd
 
 ## Then we edit the mask manually to create 
+
 - output file
     - /rfanfs/pnl-a/pnl/Collaborators/Delisi/masks-fromcluster/<case_ID>.atlasmask.thresh50-edr.nrrd
 
 ## we align t1w images 
+
 - input file
     - /rfanfs/pnl-a/pnl/Collaborators/Delisi/<case_ID>-t1w.nhdr 
     - These T1 file are created by someone and axisaligned to parallel to voxel. 
@@ -86,6 +93,7 @@
     - /rfanfs/pnl-a/pnl/Collaborators/Delisi/<case_ID>/align-space/<case_ID>-t1w-realign.nrrd
 
 ## we execute freesurfer-pipeline by "redo <case_ID>" in 
+
 - directory : 
     - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/freesurfer-pipeline/
 - output files : 
