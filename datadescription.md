@@ -8,7 +8,6 @@
 - aligned t1w and t2w mask -> FreeSurfer in masked aligned t1w
 
 
-
 # data description
 
 - Project directory
