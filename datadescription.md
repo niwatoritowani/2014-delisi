@@ -10,43 +10,43 @@
 
 # data description
 
-- Project directory : 
+- Project directory ${projectdir} : 
     - /rfanfs/pnl-a/pnl/Collaborators/Delisi
 - caselist          : 
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/caselist_jun.txt 
+    - ${projectdir}/caselist_jun.txt 
 - original DICOM directory : 
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/${caseid}/dicom/*.dcm.gz
+    - ${projectdir}/${caseid}/dicom/*.dcm.gz
 - decompressed copied DICOM data : 
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/dicom_to_nifti/data/${caseid}/T1_dcm/*.dcm
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/dicom_to_nifti/data/${caseid}/T2_dcm/*.dcm
+    - ${projectdir}/dicom_to_nifti/data/${caseid}/T1_dcm/*.dcm
+    - ${projectdir}/dicom_to_nifti/data/${caseid}/T2_dcm/*.dcm
 - NRRD (created from DICOM) : 
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/dicom_to_nifti/data/${caseid}/T1/${caseid}-T1.nrrd
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/dicom_to_nifti/data/${caseid}/T2/${caseid}-T2.nrrd
+    - ${projectdir}/dicom_to_nifti/data/${caseid}/T1/${caseid}-T1.nrrd
+    - ${projectdir}/dicom_to_nifti/data/${caseid}/T2/${caseid}-T2.nrrd
 - NRRD (Which are someone had created and their axis is aligned to voxel space)
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/${caseid}/${caseid}-t1w.nhdr
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/${caseid}/${caseid}-t2w.nhdr
+    - ${projectdir}/${caseid}/${caseid}-t1w.nhdr
+    - ${projectdir}/${caseid}/${caseid}-t2w.nhdr
 - atlasmask directory : 
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/masks-fromcluster/
+    - ${projectdir}/masks-fromcluster/
 - atlasmask : 
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/masks-fromcluster/${caseid}.atlasmask.thresh50.nrrd
+    - ${projectdir}/masks-fromcluster/${caseid}.atlasmask.thresh50.nrrd
 - training mask file list
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/masks-fromcluster/masks.txt
+    - ${projectdir}/masks-fromcluster/masks.txt
 - training T2 file list
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/masks-fromcluster/t2s.txt
+    - ${projectdir}/masks-fromcluster/t2s.txt
 - edited atlasmask :
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/masks-fromcluster/${caseid}.atlasmask.thresh50-edr.nrrd
+    - ${projectdir}/masks-fromcluster/${caseid}.atlasmask.thresh50-edr.nrrd
 - aligned T1 :
     - some realigned t1w images have been created by someone
-    - from /rfanfs/pnl-a/pnl/Collaborators/Delisi/${caseid}/${caseid}-t1w.nhdr
-    - to /rfanfs/pnl-a/pnl/Collaborators/Delisi/${caseid}/align-space/${caseid}-t1w-realign.nrrd
+    - from ${projectdir}/${caseid}/${caseid}-t1w.nhdr
+    - to ${projectdir}/${caseid}/align-space/${caseid}-t1w-realign.nrrd
 - freesurfer-pipeline directory
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/freesurfer-pipeline/
+    - ${projectdir}/pipelines-realign/freesurfer-pipeline/
 - created files by fressurfer-pipelne
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/realign-pipeline/${caseid}.xfm 
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/realign-pipeline/${caseid}-t2w-realign.nrrd 
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/realign-edrmasks-pipeline/${caseid}.t1-realign-masked.nrrd
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/realign-edrmasks-pipeline/${caseid}.mask-realign 
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/freesurfer-pipeline/${caseid}.freesurfer
+    - ${projectdir}/pipelines-realign/realign-pipeline/${caseid}.xfm 
+    - ${projectdir}/pipelines-realign/realign-pipeline/${caseid}-t2w-realign.nrrd 
+    - ${projectdir}/pipelines-realign/realign-edrmasks-pipeline/${caseid}.t1-realign-masked.nrrd
+    - ${projectdir}/pipelines-realign/realign-edrmasks-pipeline/${caseid}.mask-realign 
+    - ${projectdir}/pipelines-realign/freesurfer-pipeline/${caseid}.freesurfer
 
 
 # step by step
@@ -54,54 +54,54 @@
 ## We created nrrd files from DICOM in (use ConvertBetweenFileFormats)
 
 - input DICOM directory
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/${caseid}/dicom/
+    - ${projectdir}/${caseid}/dicom/
 - output files
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/dicom_to_nifti/data/${caseid}/T1/${caseid}-T1.nrrd
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/dicom_to_nifti/data/${caseid}/T2/${caseid}-T2.nrrd
+    - ${projectdir}/dicom_to_nifti/data/${caseid}/T1/${caseid}-T1.nrrd
+    - ${projectdir}/dicom_to_nifti/data/${caseid}/T2/${caseid}-T2.nrrd
 
 ### Or someone had created nhdr files as 
 
 - They are axis aligned to parallele to voxel space.  
 - files : 
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/${caseid}/${caseid}-t1w.nhdr
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/${caseid}/${caseid}-t2w.nhdr
+    - ${projectdir}/${caseid}/${caseid}-t1w.nhdr
+    - ${projectdir}/${caseid}/${caseid}-t2w.nhdr
 
 ## We can create Multi Atlas Based Masks by "redo ${caseid}" in 
 
 - directory : 
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/masks-fromcluster/
+    - ${projectdir}/masks-fromcluster/
 - training mask file list
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/masks-fromcluster/masks.txt
+    - ${projectdir}/masks-fromcluster/masks.txt
 - training T2 file list
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/masks-fromcluster/t2s.txt
+    - ${projectdir}/masks-fromcluster/t2s.txt
 - output file
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/masks-fromcluster/${caseid}.atlasmask.thresh50.nrrd
+    - ${projectdir}/masks-fromcluster/${caseid}.atlasmask.thresh50.nrrd
 
 ## Then we edit the mask manually to create by 3D Slicer 4. 
 
 - input file : 
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/dicom_to_nifti/data/${caseid}/T2/${caseid}-T2.nrrd
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/masks-fromcluster/${caseid}.atlasmask.thresh50.nrrd
+    - ${projectdir}/dicom_to_nifti/data/${caseid}/T2/${caseid}-T2.nrrd
+    - ${projectdir}/masks-fromcluster/${caseid}.atlasmask.thresh50.nrrd
 - output file :
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/masks-fromcluster/${caseid}.atlasmask.thresh50-edr.nrrd
+    - ${projectdir}/masks-fromcluster/${caseid}.atlasmask.thresh50-edr.nrrd
 
 ## we align t1w images 
 
 - input file  : 
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/${caseid}-t1w.nhdr 
+    - ${projectdir}/${caseid}-t1w.nhdr 
     - These T1 file are created by someone and axisaligned to parallel to voxel. 
 - output file :  
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/${caseid}/align-space/${caseid}-t1w-realign.nrrd
+    - ${projectdir}/${caseid}/align-space/${caseid}-t1w-realign.nrrd
 
 ## we execute freesurfer-pipeline by "redo ${caseid}" in 
 
 - directory : 
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/freesurfer-pipeline/
+    - ${projectdir}/pipelines-realign/freesurfer-pipeline/
 - output files : 
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/realign-pipeline/${caseid}.xfm 
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/realign-pipeline/${caseid}-t2w-realign.nrrd 
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/realign-edrmasks-pipeline/${caseid}.t1-realign-masked.nrrd
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/realign-edrmasks-pipeline/${caseid}.mask-realign 
-    - /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipelines-realign/freesurfer-pipeline/${caseid}.freesurfer
+    - ${projectdir}/pipelines-realign/realign-pipeline/${caseid}.xfm 
+    - ${projectdir}/pipelines-realign/realign-pipeline/${caseid}-t2w-realign.nrrd 
+    - ${projectdir}/pipelines-realign/realign-edrmasks-pipeline/${caseid}.t1-realign-masked.nrrd
+    - ${projectdir}/pipelines-realign/realign-edrmasks-pipeline/${caseid}.mask-realign 
+    - ${projectdir}/pipelines-realign/freesurfer-pipeline/${caseid}.freesurfer
 
 
