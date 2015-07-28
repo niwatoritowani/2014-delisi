@@ -1,0 +1,90 @@
+# in  /rfanfs/pnl-a/pnl/Collaborators/Delisi/pipeline-delisi/freesurfer-pipeline
+# done by 2015/07/27
+redo DELISI_HM_0403
+redo DELISI_HM_0503
+redo DELISI_HM_0603
+redo DELISI_HM_0703
+redo DELISI_HM_0903
+redo DELISI_HM_1003
+redo DELISI_HM_1103
+redo DELISI_HM_1203
+
+# 65 cases are left, 2015/07/28
+# plan to run in 4 parallel line 
+# 17 16 16 16 cases in each line
+
+# line 1, 17 cases
+
+redo DELISI_HM_1303
+redo DELISI_HM_1403
+redo DELISI_HM_1703
+redo DELISI_HM_2003
+redo DELISI_HM_2103
+redo DELISI_HM_2203
+redo DELISI_HM_2303
+redo DELISI_HM_2403
+redo DELISI_HM_2503
+redo DELISI_HM_2803
+redo DELISI_HM_2903
+redo DELISI_HM_3003
+redo DELISI_HM_3103
+redo DELISI_HM_3203
+redo DELISI_HM_3303
+redo DELISI_HM_3403
+redo DELISI_HM_3503
+
+# line 2, 16 cases
+redo DELISI_HM_3603
+redo DELISI_HM_3703
+redo DELISI_HM_3903
+redo DELISI_HM_4203
+redo DELISI_HM_4303
+redo DELISI_HM_4403
+redo DELISI_HM_4503
+redo DELISI_HM_4703
+redo DELISI_HM_4803
+redo DELISI_HM_4903
+redo DELISI_HM_5103
+redo DELISI_HM_5203
+redo DELISI_HM_5303
+redo DELISI_HM_5403
+redo DELISI_HM_5503
+redo DELISI_HM_5603
+
+# line 3, 16 cases
+
+redo DELISI_HM_5703
+redo DELISI_HM_5803
+redo DELISI_HM_5903
+redo DELISI_HM_6003
+redo DELISI_HM_6103
+redo DELISI_HM_6203
+redo DELISI_HM_6303
+redo DELISI_HM_6403
+redo DELISI_HM_6503
+redo DELISI_HM_6603
+redo DELISI_HM_6703
+redo DELISI_HM_6803
+redo DELISI_HM_6903
+redo DELISI_HM_7003
+redo DELISI_HM_7103
+redo DELISI_HM_7203
+
+# line 4, 16 cases
+
+redo DELISI_HM_7303
+redo DELISI_HM_7403
+redo DELISI_HM_7503
+redo DELISI_HM_7603
+redo DELISI_HM_7703
+redo DELISI_HM_7803
+redo DELISI_HM_7903
+redo DELISI_HM_8003
+redo DELISI_HM_8203
+redo DELISI_HM_8303
+redo DELISI_HM_8403
+redo DELISI_HM_8503
+redo DELISI_HM_8603
+redo DELISI_HM_8703
+redo DELISI_HM_8803
+redo DELISI_HM_8903
