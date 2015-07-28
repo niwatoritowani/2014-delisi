@@ -6,7 +6,9 @@ AF-vol.txt
 all_curv_disp.txt
 atlas_build/
 backup/
-caselist*
+caselist/LandR_demographics_MRI.xlsx
+caselist_jun.txt
+caselist.txt
 createDTIs.py.gz
 curv_disp_caselist.txt
 curv_disp_vtk_output2-MatlabMeasureTracts.txt
@@ -82,7 +84,6 @@ vtk_list.txt
 vtks_new2.txt
 vtks_new.txt
 warp_tracts.sh
-caselist*
 datadescription.md
 pipeline-delisi/freesurfer-pipeline/DELISI_HM_*
 pipeline-delisi/realign-edrmasks-pipeline/DELISI_HM_*
